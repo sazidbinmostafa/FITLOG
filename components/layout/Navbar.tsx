@@ -29,8 +29,8 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link href="/my-plan" className="btn btn-ghost text-[#9CA3AF] focus:text-[#C2F800] active:text-[#C2F800] hover:text-[#C2F800] rounded-3xl">Plan <span>{}</span></Link>
-                    <Link href="/my-plan" className="btn btn-ghost text-[#9CA3AF] focus:text-[#C2F800] active:text-[#C2F800] hover:text-[#C2F800] rounded-3xl">Saved <span>{}</span></Link>
+                    <Link href="/my-plan" className="btn btn-ghost group text-[#9CA3AF] focus:text-[#C2F800] active:text-[#C2F800] hover:text-[#C2F800] rounded-3xl">Plan <span className='badge group-focus:bg-[#C2F800] group-active:bg-[#C2F800] group-hover:bg-[#C2F800] border rounded-full text-sm text-[#9CA3AF] group-hover:text-black group-focus:text-black group-active:text-black'>{0}</span></Link>
+                    <Link href="/my-plan" className="btn btn-ghost group text-[#9CA3AF] focus:text-[#C2F800] active:text-[#C2F800] hover:text-[#C2F800] rounded-3xl">Saved <span className='badge group-focus:bg-[#C2F800] group-active:bg-[#C2F800] group-hover:bg-[#C2F800] border rounded-full text-sm text-[#9CA3AF] group-hover:text-black group-focus:text-black group-active:text-black'>{0}</span></Link>
                 </div>
             </nav>
     )
