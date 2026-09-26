@@ -1,31 +1,10 @@
-import WorkoutTable from '@/components/workouts/workout/WorkoutTable';
+import React from 'react'
+import WorkoutTable from './WorkoutTable'
 import { Bookmark, Calendar } from 'lucide-react';
 import Image from 'next/image'
+import Workout from '@/types/workout.types'
 
-async function WorkoutDetails({ params }: { params: { id: string } }) {
-
-    const { id } = await params;
-    console.log(id)
-
-    const workoutDetailsPromise = async () => {
-        try {
-            const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`, {
-                next: { revalidate: 3600 }
-            })
-            if (!res.ok) {
-                throw new Error("Failed to fetch workout details")
-            }
-            const workout = await res.json()
-            return workout
-        }
-        catch (error) {
-            console.error("Failed to fetch workout details:", error)
-            return null
-        }
-    }
-
-    const workoutDetails = await workoutDetailsPromise()
-
+async function WorkoutDetails({ workoutDetails }: { workoutDetails: Workout }) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5 container">
             <div className="flex justify-center">
@@ -54,8 +33,8 @@ async function WorkoutDetails({ params }: { params: { id: string } }) {
                         </ol>
                     </div>
                     <div className="flex gap-3">
-                        <button className="btn bg-[#C2F800] text-[#0F1115] rounded-xl"><Calendar/>Add to {"today's"} plan</button>
-                        <button className="btn btn-outline border-[#374151] rounded-xl"><Bookmark/>Save for later</button>
+                        <button className="btn btn-sm md:btn-md bg-[#C2F800] text-[#0F1115] rounded-xl"><Calendar />Add to {"today's"} plan</button>
+                        <button className="btn btn-sm md:btn-md btn-outline border-[#374151] rounded-xl"><Bookmark />Save for later</button>
                     </div>
                 </div>
             </div>

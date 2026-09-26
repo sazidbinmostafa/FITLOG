@@ -3,9 +3,11 @@ import Workouts from "@/components/workouts/Workouts";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <Banner/>
-      <Workouts/>
+      <section id="workouts-library" className="py-5">
+        <Workouts/>
+      </section>
     </div>
   );
 }

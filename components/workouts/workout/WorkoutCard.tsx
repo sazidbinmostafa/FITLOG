@@ -1,18 +1,20 @@
 import Workout from '@/types/workout.types'
-import { Clock, Flame, Power, Star } from 'lucide-react'
+import { Clock, Flame, Star } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function WorkoutCard({ workout }: { workout: Workout }) {
+
     return (
-        <div>
-            <div className="card bg-base-100 w-full shadow-sm">
+        <Link href={`/workouts/${workout.id}`}>
+            <div className="card bg-base-100 w-full shadow-sm hover:shadow-lg transition group">
                 <figure>
-                    <Image src={workout.image} alt={workout.name} width={500} height={500} className="rounded-t-xl h-60 object-[center_25%] object-cover" />
+                    <Image src={workout.image} alt={`Illustration of ${workout.name}`} width={500} height={500} className="rounded-t-xl h-60 object-[center_25%] object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
                 </figure>
                 <div className="card-body">
                     <div className="flex gap-2">
-                        {workout.muscleGroups.map((muscle, index) => (
+                        {workout.muscleGroups.map((muscle: string, index: number) => (
                             <div className="badge badge-sm badge-accent bg-[#C2F800] border border-[#C2F800] text-black font-bold rounded-3xl" key={index}>{muscle}</div>
                         ))}
                     </div>
@@ -30,7 +32,7 @@ function WorkoutCard({ workout }: { workout: Workout }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

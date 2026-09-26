@@ -1,9 +1,10 @@
+import Workouts from '@/components/workouts/Workouts'
 import React from 'react'
 
-function Workouts() {
+function WorkoutsPage() {
     return (
-        <div>Workouts</div>
+        <Workouts/>
     )
 }
 
-export default Workouts
+export default WorkoutsPage

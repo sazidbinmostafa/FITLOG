@@ -47,3 +47,7 @@
     padding-right: 2rem;
   }
 }
+
+:root{
+  scroll-behavior: smooth;
+}
