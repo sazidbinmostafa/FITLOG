@@ -9,7 +9,7 @@ function Navbar() {
     </>
 
     return (
-        <nav className="text-white border-b-2 border-b-[#15171D] container">
+        <nav className="fixed top-0 left-0 bg-dark-bg right-0 z-50 text-white border-b-2 border-b-[#15171D] container">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">

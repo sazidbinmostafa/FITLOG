@@ -5,7 +5,7 @@ import SkeletonWorkouts from '../skeleton/SkeletonWorkouts';
 
 async function Workouts() {
 
-    const workoutsPromise = async () => {
+    const getWorkouts = async () => {
         try {
             const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
                 next: { revalidate: 3600 }
@@ -23,7 +23,7 @@ async function Workouts() {
         }
     }
 
-    const workouts: Workout[] = await workoutsPromise()
+    const workouts: Workout[] = await getWorkouts()
 
     console.log(workouts)
     return (

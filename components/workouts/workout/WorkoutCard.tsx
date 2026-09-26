@@ -2,7 +2,6 @@ import Workout from '@/types/workout.types'
 import { Clock, Flame, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 function WorkoutCard({ workout }: { workout: Workout }) {
 

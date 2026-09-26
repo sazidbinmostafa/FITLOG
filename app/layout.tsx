@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import PlanProvider from "@/context/PlanContext";
+import React from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,17 +25,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: {children: React.ReactNode}) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${oswald.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} ${oswald.variable} h-full antialiased`}>
+      
       <body className="min-h-full flex flex-col">
-        <header><Navbar /></header>
-        {children}
-        
-        </body>
+        <PlanProvider>
+            <header><Navbar /></header>
+            <main>{children}</main>
+        </PlanProvider>
+
+      </body>
     </html>
   );
 }

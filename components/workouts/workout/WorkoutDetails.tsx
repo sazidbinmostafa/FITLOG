@@ -33,7 +33,7 @@ async function WorkoutDetails({ workoutDetails }: { workoutDetails: Workout }) {
                         </ol>
                     </div>
                     <div className="flex gap-3">
-                        <button className="btn btn-sm md:btn-md bg-[#C2F800] text-[#0F1115] rounded-xl"><Calendar />Add to {"today's"} plan</button>
+                        <button className="btn btn-sm md:btn-md bg-[#C2F800] text-[#0F1115] rounded-xl"><Calendar />Add to today’s plan</button>
                         <button className="btn btn-sm md:btn-md btn-outline border-[#374151] rounded-xl"><Bookmark />Save for later</button>
                     </div>
                 </div>
